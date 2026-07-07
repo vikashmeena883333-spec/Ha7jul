@@ -1,149 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deepak Wadhwa - Learning Community</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing-Based Project Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS CODE STARTS HERE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+        body {
+            background-color: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
 
-  .card {
-    width: 85%;
-    max-width: 340px; 
-    background: #010a0f;
-    border: 1.5px solid #00d2ff;
-    border-radius: 35px;
-    padding: 20px 15px;
-    text-align: center;
-    box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
-  }
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-  .profile-img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    border: 3px solid #00d2ff;
-    object-fit: cover;
-    margin-top: -5px;
-    box-shadow: 0 0 15px #00d2ff;
-  }
+        /* Header Styling */
+        .header {
+            background: linear-gradient(135deg, #0b2240 0%, #15355a 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
 
-  h1 {
-    color: #fff;
-    font-size: 20px;
-    margin: 15px 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+        .brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+        }
 
-  .features {
-    text-align: left;
-    margin: 0 auto;
-    width: 90%;
-  }
+        .badge {
+            background: #3a5d8c;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
 
-  .feature-item {
-    color: #ccc;
-    font-size: 13px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    align-items: center;
-  }
+        .header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
 
-  .feature-item:last-child { border-bottom: none; }
+        .header h1 span {
+            color: #fbc02d;
+        }
 
-  .icon { margin-right: 12px; font-size: 16px; }
+        .sub-text {
+            font-size: 13px;
+            color: #bdcddc;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
 
-  .join-text {
-    color: #eee;
-    font-size: 12px;
-    margin: 20px 0 12px;
-    font-weight: 300;
-  }
+        .btn-telegram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #fbc02d;
+            color: #0b2240;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            width: 100%;
+            padding: 14px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(251, 192, 45, 0.3);
+            transition: transform 0.2s;
+        }
 
-  .telegram-btn {
-    display: block;
-    background: linear-gradient(90deg, #00d2ff 0%, #9247ff 100%);
-    color: white;
-    text-decoration: none;
-    padding: 14px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.3);
-  }
+        .btn-telegram:hover {
+            transform: translateY(-2px);
+        }
 
-  .hindi-quote {
-    color: #bbb;
-    font-size: 13px;
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
+        .info-tags {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+        }
 
-  .footer-box {
-    border: 1px solid rgba(0, 210, 255, 0.2);
-    border-radius: 12px;
-    padding: 8px;
-    font-size: 11px;
-    color: #888;
-  }
+        .tag {
+            flex: 1;
+            font-size: 12px;
+            text-align: center;
+        }
 
-  /* Link styling for Agency */
-  .footer-box a { 
-    color: #00d2ff; 
-    font-weight: bold; 
-    text-decoration: none;
-  }
+        .tag small {
+            color: #a2b7cd;
+        }
 
-  .disclaimer {
-    font-size: 9px;
-    color: #444;
-    margin-top: 12px;
-  }
-</style>
+        /* Content Styling */
+        .content {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .section-badge {
+            background: #e1ecf7;
+            color: #2b6cb0;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .content h2 {
+            font-size: 20px;
+            color: #1a202c;
+            margin: 12px 0 25px 0;
+            font-weight: 700;
+        }
+
+        /* Cards */
+        .card {
+            display: flex;
+            background: #f8fafc;
+            border: 1px solid #edf2f7;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: left;
+            margin-bottom: 15px;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .card-icon {
+            font-size: 24px;
+            background: #fff;
+            padding: 8px;
+            border-radius: 50px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .card-text h3 {
+            font-size: 14px;
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+
+        .card-text p {
+            font-size: 12px;
+            color: #718096;
+            line-height: 1.5;
+        }
+
+        .divider {
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+            margin: 30px 0;
+        }
+
+        /* Steps Process */
+        .steps-container {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .step-num {
+            background: #2b6cb0;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 14px;
+            color: #2d3748;
+            margin-bottom: 3px;
+        }
+
+        .step-content p {
+            font-size: 12px;
+            color: #718096;
+            line-height: 1.5;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #ebf8ff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .info-box h4 {
+            font-size: 14px;
+            color: #2b6cb0;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .info-box ul {
+            list-style: none;
+        }
+
+        .info-box ul li {
+            font-size: 12px;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        /* Disclaimer */
+        .disclaimer-box {
+            background: #fffaf0;
+            border: 1px solid #feebc8;
+            color: #c05621;
+            font-size: 11px;
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.6;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .cta-section h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .cta-section p {
+            font-size: 12px;
+            color: #718096;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .btn-support {
+            display: block;
+            background: #2b6cb0;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .important-note {
+            font-size: 11px;
+            color: #718096;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        /* Footer Section */
+        .footer {
+            background: #f7fafc;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #edf2f7;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #2b6cb0;
+            text-decoration: none;
+            font-size: 11px;
+            margin: 0 8px;
+        }
+
+        .copyright {
+            font-size: 10px;
+            color: #a0aec0;
+            margin-bottom: 5px;
+        }
+
+        .agency-tag {
+            font-size: 11px;
+            color: #4a5568;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
 
-<div class="card">
-  <img src="https://i.ibb.co/FkV61CBG/711752123-122102238423341553-4586529772719677765-n.jpg" alt="Munaaf" class="profile-img">
+    <div class="container">
+        <header class="header">
+            <div class="brand">
+                <span class="logo-icon">📚</span>
+                <strong>GLOBAL BOOK</strong>
+                <span class="badge">PUBLICATION</span>
+            </div>
+            
+            <h1>Writing-Based <span>Project Information</span></h1>
+            <p class="sub-text">Writing related project process, eligibility, task details aur support information ke liye official Telegram team se direct connect karein.</p>
+            
+            <a href="https://t.me/+U_WKwKBncbtlOWFl" class="btn-telegram">
+                <i class="fab fa-telegram-plane"></i> Get Details on Telegram
+            </a>
 
-  <h1>Munaaf</h1>
+            <div class="info-tags">
+                <div class="tag"><strong>Info</strong><br><small>Project Details</small></div>
+                <div class="tag"><strong>Online</strong><br><small>Support</small></div>
+                <div class="tag"><strong>Simple</strong><br><small>Guidance</small></div>
+            </div>
+        </header>
 
-  <div class="features">
-    <div class="feature-item"><span class="icon"></span> Learning & Educational Sessions</div>
-    <div class="feature-item"><span class="icon"></span> Market Concepts & Awareness</div>
-    <div class="feature-item"><span class="icon"></span> Chart Reading Concepts</div>
-    <div class="feature-item"><span class="icon"></span> Educational Case Discussions</div>
-  </div>
+        <main class="content">
+            <span class="section-badge">PROJECT INFORMATION</span>
+            <h2>Understand the Process Before You Proceed</h2>
 
-  <p class="join-text">Join our learning community and grow your knowledge</p>
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <div class="card-text">
+                    <h3>Writing Related Task Details</h3>
+                    <p>Project type, task format aur submission process ki information support team ke through share ki jaati hai.</p>
+                </div>
+            </div>
 
-  <a href="https://t.me/+VQKcLntbMYhjOGJl" class="telegram-btn">JOIN TELEGRAM</a>
+            <div class="card">
+                <div class="card-icon">📦</div>
+                <div class="card-text">
+                    <h3>Process Guidance</h3>
+                    <p>Interested users ko project process, basic requirements aur next steps ke baare me guidance mil sakti hai.</p>
+                </div>
+            </div>
 
-  <p class="hindi-quote">     ,     </p>
+            <div class="card">
+                <div class="card-icon">💬</div>
+                <div class="card-text">
+                    <h3>Direct Support</h3>
+                    <p>Complete details ke liye Telegram par support team se connect karke information confirm karein.</p>
+                </div>
+            </div>
 
-  <div class="footer-box">
-    This Channel Advertise By <a href="https://t.me/+3XoqJNLxYHswNTc1" target="_blank">AD BUILD AGENCY</a>
-  </div>
+            <hr class="divider">
 
-  <div class="disclaimer">
-    Terms | Privacy | Disclaimer <br>
-    This site is not part of Facebook� or endorsed by Facebook�.
-  </div>
-</div>
+            <span class="section-badge">HOW IT WORKS</span>
+            <h2>Simple Information Process</h2>
+
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>Contact Support Team</h3>
+                        <p>Telegram button par click karke project details ke liye message karein.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>Get Complete Information</h3>
+                        <p>Team aapko project type, requirements, eligibility aur basic process ke baare me batayegi.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>Review Terms Carefully</h3>
+                        <p>Kisi bhi project me proceed karne se pehle terms, process aur conditions ko clearly samajhna zaroori hai.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h3>Proceed Only After Confirmation</h3>
+                        <p>Final decision lene se pehle support team se all details verify karein.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>Information You Can Ask For</h4>
+                <ul>
+                    <li>✓ Project type and task format</li>
+                    <li>✓ Eligibility and basic requirements</li>
+                    <li>✓ Submission and review process</li>
+                    <li>✓ Terms, conditions and support details</li>
+                </ul>
+            </div>
+
+            <div class="disclaimer-box">
+                <strong>Disclaimer:</strong> Ye page sirf project information ke liye hai. Selection, project availability, payout, income ya approval ki koi guarantee nahi di jaati. Final details, eligibility aur terms support team se confirm karna zaroori hai.
+            </div>
+
+            <div class="cta-section">
+                <h2>Want More Details?</h2>
+                <p>Project information ke liye niche button par click karke Telegram support team se direct connect karein.</p>
+                <a href="https://t.me/+U_WKwKBncbtlOWFl" class="btn-support">Contact Support Team</a>
+            </div>
+
+            <p class="important-note">
+                <strong>Important:</strong> Kisi bhi writing project me proceed karne se pehle complete terms, eligibility, process aur conditions ko dhyan se samjhein. Ye page guaranteed income, fixed payout ya assured selection ka claim nahi karta.
+            </p>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact</a>
+            </div>
+            <p class="copyright">© 2026 GLOBAL BOOK PUBLICATION INDIA</p>
+            <p class="agency-tag">Ads Manage by Adbuild Agency</p>
+        </footer>
+    </div>
 
 </body>
 </html>
